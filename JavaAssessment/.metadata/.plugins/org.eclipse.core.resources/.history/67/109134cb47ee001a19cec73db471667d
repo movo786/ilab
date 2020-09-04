@@ -1,0 +1,53 @@
+package automation;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.ie.*;
+
+public class DriverConfig {
+
+	private WebDriver driver;
+
+	public DriverConfig(String browser) {
+
+		switch (browser) {
+		case "ie":
+			driver = new InternetExplorerDriver();
+			break;
+
+		case "chrome":
+			driver = new ChromeDriver();
+			break;
+
+		case "firefox":
+			driver = new FirefoxDriver();
+			break;
+		}
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		// driver.manage().window().maximize();
+	}
+
+	public WebDriver getDriver() {
+		return driver;
+	}
+
+	public void close() {
+		driver.close();
+	}
+
+	public void navigateTo(String url) {
+		driver.navigate().to(url);
+	}
+
+	public void maximise() {
+		driver.manage().window().maximize();
+	}
+
+	public void clickElement(WebElement element) {
+		element.click();
+	}
+}

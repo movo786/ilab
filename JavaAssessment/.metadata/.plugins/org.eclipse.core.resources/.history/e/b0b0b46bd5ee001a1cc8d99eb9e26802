@@ -1,0 +1,31 @@
+package iLab;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.testng.TestNG;
+
+public class RunAll {
+	public static void main(String[] args) {
+
+		TestNG testSuite1 = new TestNG();
+		TestNG testSuite2 = new TestNG();
+		List<String> suitefiles = new ArrayList<String>();
+		String filePath;
+
+		// run test with data in testng xml datafile
+		filePath = System.getProperty("user.dir") + "\\src\\test\\java\\iLab\\runTest.xml";
+		suitefiles.add(filePath);
+		testSuite1.setTestSuites(suitefiles);
+		testSuite1.run();
+		suitefiles = null;
+		suitefiles = new ArrayList<String>();
+		// run test with data db
+		filePath = null;
+		filePath = System.getProperty("user.dir") + "\\src\\test\\java\\iLab\\runTest2.xml";
+		suitefiles.add(filePath);
+		testSuite2.setTestSuites(suitefiles);
+		testSuite2.run();
+		suitefiles = null;
+
+	}
+}

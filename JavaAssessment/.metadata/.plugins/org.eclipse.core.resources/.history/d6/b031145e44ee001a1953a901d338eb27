@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8?>
+<suite name="iLab test">
+   <test name="testILab">
+      <parameter name="browser" value="chrome" />
+      <parameter name="country" value="South Africa" />
+      <classes>
+         <class name="iLabTest" />
+      </classes>
+   </test>
+   <test name="testILab">
+      <parameter name="browser" value="ie" />
+      <parameter name="country" value="South Africa" />
+      <classes>
+         <class name="iLabTest" />
+      </classes>
+   </test>
+</suite>

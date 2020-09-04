@@ -1,0 +1,76 @@
+package iLab;
+
+import static org.testng.Assert.assertEquals;
+
+import java.util.*;
+
+import org.testng.Reporter;
+import org.testng.TestNG;
+import org.testng.annotations.*;
+import automation.DriverConfig;
+import automation.Utils;
+import iLab.Keywords;
+import org.testng.ISuite;
+import org.testng.ISuiteListener;
+import org.testng.ITestNGListener;
+
+public class iLabTest {
+
+	//Initialise classes
+	private Keywords kw =null;
+	private String url = "http://www.ilabquality.com/";
+	
+	private static Utils util = new Utils();
+	private static TestNG testSuite = new TestNG();
+	private static List<String> suitefiles=new ArrayList<String>();
+	private static String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\iLab\\runTest.xml";
+
+
+	@Test
+	@Parameters({"browser", "country", "name", "email"})
+	public void testILab(String browser, String country, String name, String email) {
+		//initialise driver
+		kw = new Keywords(browser);
+		kw.navigateToPage(url);
+		kw.clickCareers();
+		kw.selectCountry(country);
+		kw.selectJob();
+		kw.clickApply();
+		kw.inputApplicantDetails(name, email, util.getPhoneNumber());
+		kw.clickSendApplicaiton();
+		Reporter.log("Verifying error message");
+		assertEquals(kw.verifyErrorUpload(), "You need to upload at least one file.");
+	}
+	
+	@Test
+	@Test(dataProvider="testdata")
+	public void testILabDB(String browser, String country, String name, String email) {
+		//initialise driver
+		kw = new Keywords(browser);
+		kw.navigateToPage(url);
+		kw.clickCareers();
+		kw.selectCountry(country);
+		kw.selectJob();
+		kw.clickApply();
+		kw.inputApplicantDetails(name, email, util.getPhoneNumber());
+		kw.clickSendApplicaiton();
+		Reporter.log("Verifying error message");
+		assertEquals(kw.verifyErrorUpload(), "You need to upload at least one file.");
+	}
+	
+	@AfterTest
+	public void tearDown() {
+		kw.closeBrowser();
+		kw = null;
+	}
+	
+	 public static void main(String[] args) {
+		 util.getFromDB();
+		
+		 //run test with data in testng xml
+		 suitefiles.add(filePath);
+		 testSuite.setTestSuites(suitefiles);
+		 testSuite.run();
+		 
+	 }
+}

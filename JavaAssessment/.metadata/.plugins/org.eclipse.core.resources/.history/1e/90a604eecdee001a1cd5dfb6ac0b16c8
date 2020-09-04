@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="First Test Suite">
+  <test name="testILab2">
+    <classes>
+      <class name="iLab.iLabTest2"/>
+    </classes>
+  </test>
+</suite>

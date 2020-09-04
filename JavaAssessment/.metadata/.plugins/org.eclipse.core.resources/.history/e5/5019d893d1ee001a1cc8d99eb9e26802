@@ -1,0 +1,38 @@
+package iLab;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+
+
+import org.testng.TestNG;
+
+import org.testng.annotations.Test;
+
+public class RunAll {
+	private static TestNG testSuite = new TestNG();
+	private static List<String> suitefiles = new ArrayList<String>();
+	
+  @Test
+  public void f() {
+		String filePath;
+		// run test with data in testng xml
+		filePath = System.getProperty("user.dir") + "\\src\\test\\java\\iLab\\runTest.xml";
+		suitefiles.add(filePath);
+		testSuite.setTestSuites(suitefiles);
+		testSuite.run();
+		suitefiles = null;
+		// run test with data in testng xml
+		filePath = System.getProperty("user.dir") + "\\src\\test\\java\\iLab\\runTest2.xml";
+		suitefiles.add(filePath);
+		testSuite.setTestSuites(suitefiles);
+		testSuite.run();
+		suitefiles = null;
+  }
+	
+	public static void main(String[] args) {
+
+	}
+}

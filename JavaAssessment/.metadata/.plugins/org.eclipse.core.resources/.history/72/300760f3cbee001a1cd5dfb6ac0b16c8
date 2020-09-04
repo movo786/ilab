@@ -1,0 +1,14 @@
+package automation;
+
+public class RunAll {
+	
+	public static void main(String[] args) {
+	String filePath;
+	// run test with data in testng xml
+	filePath = System.getProperty("user.dir") + "\\src\\test\\java\\iLab\\runTest.xml";
+	suitefiles.add(filePath);
+	testSuite.setTestSuites(suitefiles);
+	testSuite.run();
+	suitefiles = null;
+	}
+}

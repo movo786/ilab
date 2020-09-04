@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+    <line>
+      <![CDATA[Launching chrome browser and navigating to:http://www.ilabquality.com/]]>
+    </line>
+    <line>
+      <![CDATA[Clicking careers]]>
+    </line>
+    <line>
+      <![CDATA[Selecting country]]>
+    </line>
+    <line>
+      <![CDATA[Selecting job]]>
+    </line>
+    <line>
+      <![CDATA[Clicking apply]]>
+    </line>
+    <line>
+      <![CDATA[Capturing applicant details]]>
+    </line>
+    <line>
+      <![CDATA[Submitting application]]>
+    </line>
+    <line>
+      <![CDATA[Verifying error message]]>
+    </line>
+    <line>
+      <![CDATA[Closing browser]]>
+    </line>
+    <line>
+      <![CDATA[Launching firefox browser and navigating to:http://www.ilabquality.com/]]>
+    </line>
+    <line>
+      <![CDATA[Clicking careers]]>
+    </line>
+    <line>
+      <![CDATA[Selecting country]]>
+    </line>
+    <line>
+      <![CDATA[Selecting job]]>
+    </line>
+    <line>
+      <![CDATA[Clicking apply]]>
+    </line>
+    <line>
+      <![CDATA[Capturing applicant details]]>
+    </line>
+    <line>
+      <![CDATA[Submitting application]]>
+    </line>
+    <line>
+      <![CDATA[Verifying error message]]>
+    </line>
+    <line>
+      <![CDATA[Closing browser]]>
+    </line>
+    <line>
+      <![CDATA[Launching FIREFOX browser and navigating to:http://www.ilabquality.com/]]>
+    </line>
+    <line>
+      <![CDATA[Clicking careers]]>
+    </line>
+    <line>
+      <![CDATA[Selecting country]]>
+    </line>
+    <line>
+      <![CDATA[Selecting job]]>
+    </line>
+    <line>
+      <![CDATA[Clicking apply]]>
+    </line>
+    <line>
+      <![CDATA[Capturing applicant details]]>
+    </line>
+    <line>
+      <![CDATA[Submitting application]]>
+    </line>
+    <line>
+      <![CDATA[Verifying error message]]>
+    </line>
+    <line>
+      <![CDATA[Closing browser]]>
+    </line>
+    <line>
+      <![CDATA[Launching CHROME browser and navigating to:http://www.ilabquality.com/]]>
+    </line>
+    <line>
+      <![CDATA[Clicking careers]]>
+    </line>
+    <line>
+      <![CDATA[Selecting country]]>
+    </line>
+    <line>
+      <![CDATA[Selecting job]]>
+    </line>
+    <line>
+      <![CDATA[Clicking apply]]>
+    </line>
+    <line>
+      <![CDATA[Capturing applicant details]]>
+    </line>
+    <line>
+      <![CDATA[Submitting application]]>
+    </line>
+    <line>
+      <![CDATA[Verifying error message]]>
+    </line>
+    <line>
+      <![CDATA[Closing browser]]>
+    </line>
+  </reporter-output>
+  <suite name="Data Table ABD DB Test Suite" duration-ms="167475" started-at="2020-09-04T20:03:11 CAT" finished-at="2020-09-04T20:05:58 CAT">
+    <groups>
+    </groups>
+    <test name="testILab Datatable Chrome" duration-ms="26592" started-at="2020-09-04T20:03:11 CAT" finished-at="2020-09-04T20:03:38 CAT">
+      <class name="iLab.iLabTest">
+        <test-method status="PASS" signature="testILab(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:iLab.iLabTest@2c6a3f77]" name="testILab" duration-ms="26482" started-at="2020-09-04T20:03:11 CAT" finished-at="2020-09-04T20:03:37 CAT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[South Africa]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Muhammad]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[automationAssessment@iLABQuality.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Launching chrome browser and navigating to:http://www.ilabquality.com/]]>
+            </line>
+            <line>
+              <![CDATA[Clicking careers]]>
+            </line>
+            <line>
+              <![CDATA[Selecting country]]>
+            </line>
+            <line>
+              <![CDATA[Selecting job]]>
+            </line>
+            <line>
+              <![CDATA[Clicking apply]]>
+            </line>
+            <line>
+              <![CDATA[Capturing applicant details]]>
+            </line>
+            <line>
+              <![CDATA[Submitting application]]>
+            </line>
+            <line>
+              <![CDATA[Verifying error message]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testILab -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:iLab.iLabTest@2c6a3f77]" name="tearDown" is-config="true" duration-ms="85" started-at="2020-09-04T20:03:37 CAT" finished-at="2020-09-04T20:03:38 CAT">
+          <reporter-output>
+            <line>
+              <![CDATA[Closing browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- iLab.iLabTest -->
+    </test> <!-- testILab Datatable Chrome -->
+    <test name="testILab Datatable Firefox" duration-ms="35047" started-at="2020-09-04T20:03:38 CAT" finished-at="2020-09-04T20:04:13 CAT">
+      <class name="iLab.iLabTest">
+        <test-method status="PASS" signature="testILab(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:iLab.iLabTest@3551a94]" name="testILab" duration-ms="34397" started-at="2020-09-04T20:03:38 CAT" finished-at="2020-09-04T20:04:12 CAT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[South Africa]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Muhammad]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[automationAssessment@iLABQuality.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Launching firefox browser and navigating to:http://www.ilabquality.com/]]>
+            </line>
+            <line>
+              <![CDATA[Clicking careers]]>
+            </line>
+            <line>
+              <![CDATA[Selecting country]]>
+            </line>
+            <line>
+              <![CDATA[Selecting job]]>
+            </line>
+            <line>
+              <![CDATA[Clicking apply]]>
+            </line>
+            <line>
+              <![CDATA[Capturing applicant details]]>
+            </line>
+            <line>
+              <![CDATA[Submitting application]]>
+            </line>
+            <line>
+              <![CDATA[Verifying error message]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testILab -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:iLab.iLabTest@3551a94]" name="tearDown" is-config="true" duration-ms="650" started-at="2020-09-04T20:04:12 CAT" finished-at="2020-09-04T20:04:13 CAT">
+          <reporter-output>
+            <line>
+              <![CDATA[Closing browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- iLab.iLabTest -->
+    </test> <!-- testILab Datatable Firefox -->
+    <test name="testILab2 DB Test Firefox and Chrome" duration-ms="105820" started-at="2020-09-04T20:04:13 CAT" finished-at="2020-09-04T20:05:58 CAT">
+      <class name="iLab.iLabTest2">
+        <test-method status="PASS" signature="testILabDB(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:iLab.iLabTest2@97e1986]" name="testILabDB" duration-ms="38667" started-at="2020-09-04T20:04:13 CAT" data-provider="testdata" finished-at="2020-09-04T20:04:52 CAT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FIREFOX]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[South Africa]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Muhammad]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[automationAssessment@iLABQuality.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Launching FIREFOX browser and navigating to:http://www.ilabquality.com/]]>
+            </line>
+            <line>
+              <![CDATA[Clicking careers]]>
+            </line>
+            <line>
+              <![CDATA[Selecting country]]>
+            </line>
+            <line>
+              <![CDATA[Selecting job]]>
+            </line>
+            <line>
+              <![CDATA[Clicking apply]]>
+            </line>
+            <line>
+              <![CDATA[Capturing applicant details]]>
+            </line>
+            <line>
+              <![CDATA[Submitting application]]>
+            </line>
+            <line>
+              <![CDATA[Verifying error message]]>
+            </line>
+            <line>
+              <![CDATA[Closing browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testILabDB -->
+        <test-method status="PASS" signature="testILabDB(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:iLab.iLabTest2@97e1986]" name="testILabDB" duration-ms="66763" started-at="2020-09-04T20:04:52 CAT" data-provider="testdata" finished-at="2020-09-04T20:05:58 CAT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CHROME]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[South Africa]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Muhammad]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[automationAssessment@iLABQuality.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Launching CHROME browser and navigating to:http://www.ilabquality.com/]]>
+            </line>
+            <line>
+              <![CDATA[Clicking careers]]>
+            </line>
+            <line>
+              <![CDATA[Selecting country]]>
+            </line>
+            <line>
+              <![CDATA[Selecting job]]>
+            </line>
+            <line>
+              <![CDATA[Clicking apply]]>
+            </line>
+            <line>
+              <![CDATA[Capturing applicant details]]>
+            </line>
+            <line>
+              <![CDATA[Submitting application]]>
+            </line>
+            <line>
+              <![CDATA[Verifying error message]]>
+            </line>
+            <line>
+              <![CDATA[Closing browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testILabDB -->
+      </class> <!-- iLab.iLabTest2 -->
+    </test> <!-- testILab2 DB Test Firefox and Chrome -->
+  </suite> <!-- Data Table ABD DB Test Suite -->
+</testng-results>

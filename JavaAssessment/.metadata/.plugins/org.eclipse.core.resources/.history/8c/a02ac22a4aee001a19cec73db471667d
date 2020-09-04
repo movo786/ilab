@@ -1,0 +1,62 @@
+package automation;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.ie.*;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class DriverConfig {
+
+	private WebDriver driver;
+
+	public DriverConfig(String browser) {
+
+		switch (browser) {
+		case "ie":
+			
+			DesiredCapabilities capabilities = DesiredCapabilities.InternetExplorer();
+			capabilities.setCapability("nativeEvents", false);
+			capabilities.setCapability("unexpectedAlertBehaviour", "accept");
+			capabilities.setCapability("ignoreProtectedModeSettings", true);
+			capabilities.setCapability("disable-popup-blocking", true);
+			capabilities.setCapability("enablePersistentHover", true);
+			capabilities.setCapability("ignoreZoomSetting", true);
+			driver = new InternetExplorerDriver(InternetExplorerOptions);
+			break;
+
+		case "chrome":
+			driver = new ChromeDriver();
+			break;
+
+		case "firefox":
+			driver = new FirefoxDriver();
+			break;
+		}
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+	public WebDriver getDriver() {
+		return driver;
+	}
+
+	public void close() {
+		driver.close();
+	}
+
+	public void navigateTo(String url) {
+		driver.navigate().to(url);
+	}
+
+	public void maximise() {
+		driver.manage().window().maximize();
+	}
+
+	public void clickElement(WebElement element) {
+		element.click();
+	}
+}

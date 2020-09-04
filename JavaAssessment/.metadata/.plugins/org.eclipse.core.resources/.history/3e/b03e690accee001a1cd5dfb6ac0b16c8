@@ -1,0 +1,31 @@
+package automation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.testng.TestNG;
+import org.testng.annotations.DataProvider;
+
+public class RunAll {
+	
+	private static Utils util = new Utils();
+	private static TestNG testSuite = new TestNG();
+	private static List<String> suitefiles = new ArrayList<String>();
+	
+	public static void main(String[] args) {
+	String filePath;
+	// run test with data in testng xml
+	filePath = System.getProperty("user.dir") + "\\src\\test\\java\\iLab\\runTest.xml";
+	suitefiles.add(filePath);
+	testSuite.setTestSuites(suitefiles);
+	testSuite.run();
+	suitefiles = null;
+	String filePath;
+	// run test with data in testng xml
+	filePath = System.getProperty("user.dir") + "\\src\\test\\java\\iLab\\runTest2.xml";
+	suitefiles.add(filePath);
+	testSuite.setTestSuites(suitefiles);
+	testSuite.run();
+	suitefiles = null;
+	}
+}

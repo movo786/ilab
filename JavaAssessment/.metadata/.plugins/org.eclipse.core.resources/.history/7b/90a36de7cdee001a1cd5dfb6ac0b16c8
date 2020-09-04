@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="First Test Suite">
+
+  <test name="testILab FIREFOX">
+    <parameter name='browser' value="firefox"></parameter>
+    <parameter name="country" value="South Africa"></parameter>
+    <parameter name="name" value="Muhammad"></parameter>
+    <parameter name="email" value="automationAssessment@iLABQuality.com"></parameter>
+    <classes>
+      <class name="iLab.iLabTest"/>
+    </classes>
+  </test>
+  <test name="testILab CHROME">
+    <parameter name='browser' value="chrome"></parameter>
+    <parameter name="country" value="South Africa"></parameter>
+    <parameter name="name" value="Muhammad"></parameter>
+    <parameter name="email" value="automationAssessment@iLABQuality.com"></parameter>
+    <classes>
+      <class name="iLab.iLabTest"/>
+    </classes>
+  </test>
+</suite>

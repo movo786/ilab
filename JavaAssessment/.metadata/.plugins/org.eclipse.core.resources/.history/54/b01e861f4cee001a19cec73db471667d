@@ -1,0 +1,66 @@
+package automation;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.ie.*;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import jdk.nashorn.internal.runtime.regexp.joni.Option;
+
+public class DriverConfig {
+
+	private WebDriver driver;
+
+	public DriverConfig(String browser) {
+
+		switch (browser) {
+		case "ie":
+			
+			InternetExplorerOptions options = new InternetExplorerOptions();
+			options.EnableNativeEvents = false;
+			options.UnhandledPromptBehavior = UnhandledPromptBehavior.Accept;
+			options.EnablePersistentHover = true;
+			options.IgnoreZoomLevel = true;
+			options.AcceptInsecureCertificates = true; // #Bug - SeleniumHQ/selenium-google-code-issue-archive#2381
+			options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+			options.IgnoreZoomLevel = true;
+			options.EnsureCleanSession = true;
+			driver = new InternetExplorerDriver(options);
+			break;
+
+		case "chrome":
+			driver = new ChromeDriver();
+			break;
+
+		case "firefox":
+			driver = new FirefoxDriver();
+			break;
+		}
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+	public WebDriver getDriver() {
+		return driver;
+	}
+
+	public void close() {
+		driver.close();
+	}
+
+	public void navigateTo(String url) {
+		driver.navigate().to(url);
+	}
+
+	public void maximise() {
+		driver.manage().window().maximize();
+	}
+
+	public void clickElement(WebElement element) {
+		element.click();
+	}
+}

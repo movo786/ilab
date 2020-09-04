@@ -1,0 +1,71 @@
+package automation;
+
+import java.util.Random;
+import java.sql.*;
+
+// Utils class for global functions
+public class Utils {
+
+	public String getPhoneNumber() {
+		// Generate random phone number in specified format
+		String phone;
+		Random rand = new Random();
+		phone = 0 + String.format("%02d", rand.nextInt(100)) + " " + String.format("%03d", rand.nextInt(1000)) + " "
+				+ String.format("%04d", rand.nextInt(10000));
+		;
+		return phone;
+	}
+
+	public Object[][] getFromDB() {
+		// variables
+		Statement statement = null;
+		ResultSet resultSet = null;
+		Connection connection = null;
+		Object[][] myData = new Object[1][1];
+		// get relative path
+		String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\testData.mdb";
+		String databaseURL = "jdbc:ucanaccess://" + filePath;
+		String sql;
+
+		int count = 0;
+
+		
+		try {
+
+			// create and get connection
+			connection = DriverManager.getConnection(databaseURL);
+			// create JDBC Statement
+			statement = connection.createStatement();
+			// execute SQL & retrieve data into ResultSet
+			sql = "Select count(*) from testData";
+
+			resultSet = statement.executeQuery(sql);
+			
+			while (resultSet.next()) {
+				count = resultSet.getInt(1);
+			}
+
+
+			sql = "Select * from testData";
+			resultSet = statement.executeQuery(sql);
+			
+			myData = new Object[count][4];
+			
+			count = 0;
+			while (resultSet.next()) {
+				System.out.println("DB data: "resultSet.getString(2) + "\t" + resultSet.getString(3) + "\t" + resultSet.getString(4) + "\t" + resultSet.getString(5));
+				myData[count][0] = resultSet.getString(2);
+				myData[count][1] = resultSet.getString(3);
+				myData[count][2] = resultSet.getString(4);
+				myData[count][3] = resultSet.getString(5);
+
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
+		
+		return myData;
+	}
+
+}

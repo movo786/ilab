@@ -1,0 +1,23 @@
+package iLab;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class PageObjects {
+	protected static WebDriver driver;
+	
+
+	public PageObjects(WebDriver driver){
+	    this.driver = driver;
+	}
+	
+	By lnkCareers = By.linkText("CAREERS");
+	By lnkJob = By.linkText("Interns - BSC Computer Science, National Diploma: IT Development Graduates");
+	By lnkApply = By.linkText("Apply Online");
+	By txtName = By.id("applicant_name");
+	By txtEmail = By.id("email");
+	By txtPhone = By.phone("phone");
+	By lblMessage = By.id("message");
+	By btnSumit = By.id("wpjb_submit");
+
+}

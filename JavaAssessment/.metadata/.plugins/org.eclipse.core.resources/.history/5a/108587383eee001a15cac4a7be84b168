@@ -1,0 +1,59 @@
+package iLab;
+
+import org.apache.tools.ant.taskdefs.Sleep;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import automation.DriverConfig;
+
+public class Keywords {
+	private DriverConfig config;
+	private PageObjects oj;
+	protected static WebDriver driver;
+
+	public Keywords(String browser, String url) {
+		config = new DriverConfig(browser);
+		oj = new PageObjects();
+		this.driver = config.getDriver();
+	}
+
+	public void navigateToPage(String url) {
+		config.maximise();
+		config.navigateTo(url);
+	}
+
+	public void closeBrowser() {
+		config.close();
+	}
+	
+	public void clickCareers() {
+		driver.findElement(oj.lnkCareers).click();
+	}
+	
+	public void selectCountry(String country) {
+		driver.findElement(By.linkText(country)).click();
+	}
+	
+	public void selectJob(){
+		driver.findElement(oj.lnkJob).click();
+	}
+	
+	public void clickApply() {
+		driver.findElement(oj.lnkApply);
+	}
+	
+	public void inputApplicantDetails(String name, String email, String phone) {
+		driver.findElement(oj.txtName).sendKeys(name);
+		driver.findElement(oj.txtEmail).sendKeys(email);
+		driver.findElement(oj.txtPhone).sendKeys(phone);		
+	}
+	
+	public void clickSendApplicaiton() {
+		driver.findElement(oj.btnSumit).click();
+	}
+	
+	public String verifyErrorUpload() {
+		return driver.findElement(oj.lblMessage).getText();
+	}
+}

@@ -1,0 +1,62 @@
+package iLab;
+
+import static org.testng.Assert.assertEquals;
+
+import java.util.*;
+
+import org.testng.Reporter;
+import org.testng.TestNG;
+import org.testng.annotations.*;
+import automation.Utils;
+import org.testng.annotations.DataProvider;
+
+public class iLabTest2 {
+
+	// Initialise classes
+	private Keywords kw = null;
+	private String url = "http://www.ilabquality.com/";
+
+	private static Utils util = new Utils();
+	private static TestNG testSuite = new TestNG();
+	private static List<String> suitefiles = new ArrayList<String>();
+	
+	@DataProvider(name = "testdata")
+	public Object[][] TestDataFeed() {
+
+		Object [][] data= new Object[2][4];
+		data = util.getFromDB();
+		return data;
+	}
+
+	@Test(dataProvider = "testdata")
+	public void testILabDB(String browser, String country, String name, String email) {
+		// initialise driver
+		kw = new Keywords(browser);
+		kw.navigateToPage(url);
+		kw.clickCareers();
+		kw.selectCountry(country);
+		kw.selectJob();
+		kw.clickApply();
+		kw.inputApplicantDetails(name, email, util.getPhoneNumber());
+		kw.clickSendApplicaiton();
+		Reporter.log("Verifying error message");
+		assertEquals(kw.verifyErrorUpload(), "You need to upload at least one file.");
+	}
+
+	@AfterTest
+	public void tearDown() {
+		kw.closeBrowser();
+		kw = null;
+	}
+
+	public static void main(String[] args) {
+		String filePath;
+		// run test with data in testng xml
+		filePath = System.getProperty("user.dir") + "\\src\\test\\java\\iLab\\runTest2.xml";
+		suitefiles.add(filePath);
+		testSuite.setTestSuites(suitefiles);
+		testSuite.run();
+		suitefiles = null;
+
+	}
+}

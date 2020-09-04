@@ -1,0 +1,16 @@
+package iLab;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class PageObjects {
+	protected static WebDriver driver;
+	
+	public By lnkCareers = By.linkText("CAREERS");
+	public By lnkJob = By.linkText("Interns - BSC Computer Science, National Diploma: IT Development Graduates")
+	
+	public PageObjects(WebDriver driver){
+	    this.driver = driver;
+	}
+
+}

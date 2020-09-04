@@ -1,0 +1,70 @@
+package iLab;
+
+import org.apache.tools.ant.taskdefs.Sleep;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+import automation.DriverConfig;
+
+public class Keywords {
+	private DriverConfig config;
+	private PageObjects oj;
+	protected static WebDriver driver;
+	private String browser;
+
+	public Keywords(String br) {
+		browser = br;
+		config = new DriverConfig(browser);
+		oj = new PageObjects();
+		this.driver = config.getDriver();
+	}
+
+	public void navigateToPage(String url) {
+		Reporter.log("Launching " + browser + " browser and navigating to:" + url);
+		config.maximise();
+		config.navigateTo(url);
+	}
+
+	public void closeBrowser() {
+		Reporter.log("Closing browser");
+		config.close();
+	}
+	
+	public void clickCareers() {
+		Reporter.log("Clicking careers");
+		driver.findElement(oj.lnkCareers).click();
+	}
+	
+	public void selectCountry(String country) {
+		Reporter.log("Selecting country");
+		driver.findElement(By.linkText(country)).click();
+	}
+	
+	public void selectJob(){
+		Reporter.log("Selecting job");
+		driver.findElement(oj.lnkJob).click();
+	}
+	
+	public void clickApply() {
+		Reporter.log("Clicking apply");
+		driver.findElement(oj.lnkApply).click();
+	}
+	
+	public void inputApplicantDetails(String name, String email, String phone) {
+		Reporter.log("Capturing applicant details");
+		driver.findElement(oj.txtName).sendKeys(name);
+		driver.findElement(oj.txtEmail).sendKeys(email);
+		driver.findElement(oj.txtPhone).sendKeys(phone);		
+	}
+	
+	public void clickSendApplicaiton() {
+		Reporter.log("Submitting application");
+		driver.findElement(oj.btnSumit).click();
+	}
+	
+	public String verifyErrorUpload() {
+		return driver.findElement(oj.lblMessage).getText();
+	}
+}
