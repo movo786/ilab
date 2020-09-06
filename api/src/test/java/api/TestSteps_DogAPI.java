@@ -7,29 +7,19 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.matcher.RestAssuredMatchers.*;
 import org.hamcrest.Matchers.*;
-
-import com.sun.corba.se.impl.orbutil.RepIdDelegator;
-
 import static org.hamcrest.Matchers.*;
-
 import java.util.List;
-
-import org.apache.tools.ant.filters.TokenFilter.ContainsString;
-import org.apache.tools.ant.types.resources.comparators.Exists;
 
 
 public class TestSteps_DogAPI {
 	 private static final String BASE_URL = "https://dog.ceo";
 	 private static String BASE_PATH;
-	 private static Response myresponse;
-	 private static String jsonString;
 	 
 	 private Response response;
 	 private RequestSpecification request;
 
 	 @Given("I set the random search method")
 	 public void i_set_the_random_search_method() {
-		    // Write code here that turns the phrase above into concrete actions
 		 	RestAssured.baseURI = BASE_URL;
 		 	BASE_PATH = "/api/breeds/image/random";
 		    request = RestAssured.given();
@@ -83,6 +73,7 @@ public class TestSteps_DogAPI {
 		List<String> ids = response.jsonPath().getList("message");
 		RequestSpecification subRequest;
 		Response subResponse;
+		//iterate through all sub breeds and print image list
 		  for (String id : ids) {
 			  BASE_PATH = "api/breed/"+ breed + "/" + id + "/images";	
 			  subRequest = RestAssured.given();
