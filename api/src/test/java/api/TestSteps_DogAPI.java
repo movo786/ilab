@@ -2,11 +2,8 @@ package api;
 
 import cucumber.api.java.en.*;
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import io.restassured.matcher.RestAssuredMatchers.*;
-import org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.*;
 import java.util.List;
 
@@ -68,7 +65,6 @@ public class TestSteps_DogAPI {
 	@Then("Log all sub breeds and images for \"([^\"]*)\"$")
 	public void log_all_sub_breeds_and_images_for(String breed) {
 		response.then().log().all();
-		response.then().statusCode(200);
 		List<String> ids = response.jsonPath().getList("message");
 		RequestSpecification subRequest;
 		Response subResponse;

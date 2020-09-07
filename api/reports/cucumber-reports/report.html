@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Sep 6, 2020 09:36:52 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Sep 7, 2020 02:19:42 AM</span>
 				</a>
 			</li>
 			<li>
@@ -122,7 +122,7 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -137,7 +137,7 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>6</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -152,7 +152,7 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>9</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>18</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -172,12 +172,12 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>https://dog.ceo/dog-api/</span>
-						<span class='test-time'>Sep 6, 2020 09:36:52 PM</span>
+						<span class='test-time'>Sep 7, 2020 02:19:42 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 0m 2s+725ms</span>
+	<span class='duration right label'>0h 0m 2s+434ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">Verify that a successful message is returned when a user searches for random breeds</span>
@@ -210,7 +210,7 @@
 	</ul>
 </div>
 <div class='scenario node' test-id='6' status='pass'>
-	<span class='duration right label'>0h 0m 0s+509ms</span>
+	<span class='duration right label'>0h 0m 0s+479ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">Verify that bulldog is on the list of all breeds</span>
@@ -243,7 +243,7 @@
 	</ul>
 </div>
 <div class='scenario node' test-id='10' status='pass'>
-	<span class='duration right label'>0h 0m 1s+980ms</span>
+	<span class='duration right label'>0h 0m 1s+847ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">Retrieve all sub-breeds for bulldogs and their respective images</span>
@@ -270,6 +270,116 @@
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then Log all sub breeds and images for "bulldog"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>https://petstore.swagger.io</span>
+						<span class='test-time'>Sep 7, 2020 02:19:47 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='15' status='pass'>
+	<span class='duration right label'>0h 0m 2s+116ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Retrieve all available pets and confirm that the name doggie with category id 12 is on the list</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='16' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I set the findbystatus method</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='17' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I get the pet list with status "available"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='18' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Verify that category 12 and name "doggie" exists</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='19' status='pass'>
+	<span class='duration right label'>0h 0m 1s+367ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Add a new pet with an auto generated name and status available - Confirm the new pet has been added</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='20' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I have a pet with a random name and status "available"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='21' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I post to api</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='22' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Verify pet was added</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='23' status='pass'>
+	<span class='duration right label'>0h 0m 1s+340ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">From point 2 above retrieve the created pet using the ID</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='24' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I have a petid</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='25' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When I get by petid</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='26' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Verify my pet has been returned</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -312,37 +422,37 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Features
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>2</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>6</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>9</div>
+					<div class='panel-lead'>18</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 6, 2020 09:36:52 PM</div>
+					<div class='panel-lead'>Sep 7, 2020 02:19:42 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 6, 2020 09:36:58 PM</div>
+			 		<div class='panel-lead'>Sep 7, 2020 02:19:52 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 5s+272ms</div>
+					<div class='panel-lead'>0h 0m 9s+646ms</div>
 				</div>
 			</div>
 		</div>
@@ -355,7 +465,7 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
+				passParent: 2,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
@@ -363,7 +473,7 @@
 				skipParent: 0,
 				exceptionsParent: 0,
 				
-				passChild: 3,
+				passChild: 6,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
@@ -372,7 +482,7 @@
 				infoChild: 0,
 				exceptionsChild: 0,
 				
-				passGrandChild: 9,
+				passGrandChild: 18,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,

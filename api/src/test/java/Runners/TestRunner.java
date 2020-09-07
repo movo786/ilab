@@ -7,8 +7,11 @@ import org.testng.annotations.*;
 import com.vimalselvam.cucumber.listener.*;
 import com.vimalselvam.cucumber.listener.Reporter;
 
-@CucumberOptions(features = "src/test/resources", glue = { "api" }, plugin = {
-		"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:reports/cucumber-reports/report.html" })
+@CucumberOptions(
+		features = "src/test/resources", 
+		glue = { "api" }, 
+		plugin = {"pretty",
+		"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:reports/cucumber-reports/report.html" },strict = true)
 
 public class TestRunner {
 	private TestNGCucumberRunner testNGCucumberRunner;
